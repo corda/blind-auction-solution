@@ -4,15 +4,21 @@ import com.r3.conclave.common.EnclaveInstanceInfo;
 import com.r3.conclave.common.OpaqueBytes;
 import com.r3.conclave.host.EnclaveHost;
 import com.r3.conclave.host.EnclaveLoadException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.r3.conclave.mail.EnclaveMail;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.xml.bind.DatatypeConverter;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 @RestController
-public class GreetingController {
+public class HostController {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
@@ -22,8 +28,8 @@ public class GreetingController {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 
-	@GetMapping("/remoteAttestation")
-	public String getRA() throws EnclaveLoadException {
+	@GetMapping(path="/remote_attestation", produces= "application/json")
+	public Map<String, String> getRA() throws EnclaveLoadException {
 
 		try {
 			EnclaveHost.checkPlatformSupportsEnclaves(true);
@@ -45,15 +51,22 @@ public class GreetingController {
 			OpaqueBytes spid = new OpaqueBytes(new byte[16]);
 			String attestationKey = "mock-key";
 			// Start it up. In future versions this API will take more parameters, which is why it's explicit.
-			enclave.start(spid, attestationKey, null);
+			AtomicReference<byte[]> mailToSend = new AtomicReference<>();
+			enclave.start(spid, attestationKey, new EnclaveHost.MailCallbacks() {
+				@Override
+				public void postMail(byte[] encryptedBytes, String routingHint) {
+					mailToSend.set(encryptedBytes);
+				}
+			}
+			);
 
 			// The attestation data must be provided to the client of the enclave, via whatever mechanism you like.
 			final EnclaveInstanceInfo attestation = enclave.getEnclaveInstanceInfo();
 			final byte[] attestationBytes = attestation.serialize();
-			System.out.println("This attestation requires " + attestationBytes.length + " bytes.");
+			//System.out.println("This attestation requires " + attestationBytes.length + " bytes.");
 
 			// It has a useful toString method.
-			System.out.println(EnclaveInstanceInfo.deserialize(attestationBytes));
+			//System.out.println(EnclaveInstanceInfo.deserialize(attestationBytes));
 
 			// Here's how to check it matches the expected code hash but otherwise can be insecure (e.g. simulation mode).
 			//
@@ -61,8 +74,38 @@ public class GreetingController {
 			// constraint.check(attestation);
 
 			// !dlrow olleH      :-)
+			//EnclaveInstanceInfo deserializedAttestation = EnclaveInstanceInfo.deserialize(attestationBytes);
+			HashMap <String, String> map = new HashMap<>();
+			map.put("bytes", Base64.getEncoder().encodeToString(attestationBytes));
 
-			return callEnclave(enclave, "Hello world!").toString();
+			return map;
+		}
+	}
+
+	@PostMapping(path = "/send_bid", consumes = "application/json", produces = "application/json")
+	public String sendBid(@RequestBody String base64EncodedMail) throws EnclaveLoadException {
+
+		try (EnclaveHost enclave = EnclaveHost.load("com.r3.conclave.sample.enclave.ReverseEnclave")) {
+
+			OpaqueBytes spid = new OpaqueBytes(new byte[16]);
+			String attestationKey = "mock-key";
+			// Start it up.
+			AtomicReference<byte[]> requestToDeliver = new AtomicReference<>();
+			enclave.start(spid, attestationKey, new EnclaveHost.MailCallbacks() {
+				@Override
+				public void postMail(byte[] encryptedBytes, String routingHint) {
+					requestToDeliver.set(encryptedBytes);
+				}
+			});
+
+			// Deliver it. The enclave will give us some mail to reply with via the callback we passed in
+			// to the start() method.
+			byte [] mailBytes = DatatypeConverter.parseBase64Binary(base64EncodedMail);
+			enclave.deliverMail(1, mailBytes);
+
+			//get the enclave's response from the callback and convert to base64 to return via JSON
+			String toSend = DatatypeConverter.printBase64Binary(requestToDeliver.get());
+			return callEnclave(enclave, toSend);
 		}
 	}
 
