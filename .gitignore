@@ -1,2 +1,7 @@
-host/build
-enclave/build
+Webserver/host/build
+Webserver/enclave/build
+Webserver/.gradle
+Webserver/.idea
+Webserver/build
+Webserver/buildscripts
+Webserver/host/lib

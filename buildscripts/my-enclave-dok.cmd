@@ -1,1 +1,0 @@
-docker run --name sealed-bid-auction -it -d -v c:/ws/sealed-bid-auction:/sdk -w /sdk ubuntu bash && docker exec -ti sealed-bid-auction apt update && docker exec -ti sealed-bid-auction apt install -y openjdk-8-jdk && docker exec -ti sealed-bid-auction tar xf /sdk/host/build/distributions/host.tar -C /tmp/ && docker exec -ti sealed-bid-auction /tmp/host/bin/host
