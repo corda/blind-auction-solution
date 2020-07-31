@@ -1,1 +1,0 @@
-docker exec -ti sealed-bid-auction tar xf /sdk/host/build/distributions/host.tar -C /tmp/ && docker exec -ti sealed-bid-auction /tmp/host/bin/host

@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+    id 'application'
+}
+
+mainClassName = "com.r3.conclave.sample.host.Host"
+
+// Override the default (simulation) with -PenclaveMode=
+def mode = findProperty("enclaveMode")?.toString()?.toLowerCase() ?: "simulation"
+
+// Create a task that can be used for generating signing materials
+tasks.register("prepareForSigning") {
+    it.dependsOn(":enclave:generateEnclaveSigningMaterial" + mode.capitalize())
+}    
+
+dependencies {
+    implementation "com.r3.conclave:conclave-host:$conclaveVersion"
+    implementation "com.r3.conclave:conclave-client:$conclaveVersion"
+
+    runtimeOnly project(path: ":enclave", configuration: mode)
+    runtimeOnly "org.slf4j:slf4j-simple:1.7.30"
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.6.0"
+
+    //spring
+    implementation "com.r3.conclave:conclave-host"
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+//    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+//    }
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.11.+"
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
+
+test {
+    // Pass through any -Pspid and -Pattestation-key parameters to the tests
+    systemProperties project.properties.subMap(["spid", "attestation-key"])
+}
+configurations {
+    compile.exclude module: 'spring-boot-starter-logging'
+}
