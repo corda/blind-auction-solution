@@ -33,9 +33,9 @@ public class HostTest {
         enclave.close();
     }
 
-    @Test
-    void reverseNumber() {
-        String response = Host.callEnclave(enclave, "123456");
-        assertEquals("654321", response);
-    }
+//    @Test
+//    void reverseNumber() {
+//        String response = Host.callEnclave(enclave, "123456");
+//        assertEquals("654321", response);
+//    }
 }
