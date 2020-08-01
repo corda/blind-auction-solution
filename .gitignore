@@ -5,3 +5,4 @@ Webserver/.idea
 Webserver/build
 Webserver/buildscripts
 Webserver/host/lib
+Client/.idea/*
