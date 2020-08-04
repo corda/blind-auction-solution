@@ -1,18 +1,16 @@
 package com.r3.conclave.sample.host;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.r3.conclave.common.EnclaveInstanceInfo;
 import com.r3.conclave.common.OpaqueBytes;
 import com.r3.conclave.host.EnclaveHost;
 import com.r3.conclave.host.EnclaveLoadException;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 @RestController

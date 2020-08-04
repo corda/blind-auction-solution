@@ -1,7 +1,5 @@
 package com.r3.conclave.sample.client;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.r3.conclave.client.EnclaveConstraint;
 import com.r3.conclave.client.InvalidEnclaveException;
 import com.r3.conclave.common.EnclaveInstanceInfo;
@@ -9,15 +7,14 @@ import com.r3.conclave.mail.Curve25519KeyPairGenerator;
 import com.r3.conclave.mail.EnclaveMail;
 import com.r3.conclave.mail.MutableMail;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.security.KeyPair;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Client {
 
@@ -47,7 +44,7 @@ public class Client {
         System.out.println("All the bids were: " + Arrays.toString(bids));
     }
 
-    /*
+    /**
     * A method used to POST raw encrypted bytes to an enclave.
     *
     * @PARAM bid - the undisclosed amount the user is willing to pay

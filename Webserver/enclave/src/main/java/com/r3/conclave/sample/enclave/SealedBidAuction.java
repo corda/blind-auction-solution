@@ -6,9 +6,11 @@ import com.r3.conclave.mail.EnclaveMail;
 import com.r3.conclave.mail.MutableMail;
 
 import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Find the highest bid in a set of 5.
+ */
 
 public class SealedBidAuction extends Enclave implements EnclaveCall {
     List<byte[]> allBids = new ArrayList<>();
