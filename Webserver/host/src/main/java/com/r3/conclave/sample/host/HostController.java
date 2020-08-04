@@ -6,11 +6,11 @@ import com.r3.conclave.common.EnclaveInstanceInfo;
 import com.r3.conclave.common.OpaqueBytes;
 import com.r3.conclave.host.EnclaveHost;
 import com.r3.conclave.host.EnclaveLoadException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.InputStream;
+import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -20,17 +20,19 @@ public class HostController {
 	EnclaveHost enclave;
 	AtomicReference<byte[]> requestToDeliver = new AtomicReference<>();
 	List<byte[]> allBids = new ArrayList<>();
-	int numOfBids;
 
 	@GetMapping(path="/status", produces= "application/json")
 	public String greeting() {
 		return "Up and running!";
 	}
 
-	@GetMapping(path="/sealed_bid_ra", produces= "application/json")
-	public Map<String, String> get_sealed_bid_ra() throws EnclaveLoadException {
+	// A GET endpoint used to retrieve the remote attestation.
+	@GetMapping(path="/sealed_bid_ra")
+	public byte[] get_sealed_bid_ra() throws EnclaveLoadException {
 
+			// Load our enclave
 			enclave = EnclaveHost.load("com.r3.conclave.sample.enclave.SealedBidAuction");
+
 			OpaqueBytes spid = new OpaqueBytes(new byte[16]);
 			String attestationKey = "mock-key";
 
@@ -42,37 +44,31 @@ public class HostController {
 				}
 			});
 
-			// The attestation data must be provided to the client of the enclave, via whatever mechanism you like.
-			final EnclaveInstanceInfo attestation = enclave.getEnclaveInstanceInfo();
-			final byte[] attestationBytes = attestation.serialize();
-
-			HashMap <String, String> returnMap = new HashMap<>();
-			returnMap.put("bytes", Base64.getEncoder().encodeToString(attestationBytes));
-
-			return returnMap;
+		    return enclave.getEnclaveInstanceInfo().serialize();
 	}
 
-	@PostMapping(path = "/send_bid", consumes = "application/json", produces = "application/json")
-	public HashMap <String, String> sendBid(@RequestBody String jsonString){
-		HashMap<String,String> map = new Gson().fromJson(jsonString, new TypeToken<HashMap<String, String>>(){}.getType());
+	// A POST endpoint which accepts raw encrypted bytes sent by a client to deliever to an enclave.
+	@PostMapping(path = "/send_bid")
+	public byte[] sendBid(@RequestBody byte[] bid){
 
-			// Deliver it. The enclave will give us some mail to reply with via the callback we passed in
-			// to the start() method.
-			byte [] mailBytes = Base64.getDecoder().decode(map.get("mail"));
-			HashMap <String, String> returnMap = new HashMap<>();
-			allBids.add(mailBytes);
-			numOfBids = allBids.size();
+			allBids.add(bid);
+
+			// Don't run the enclave until we have all 5 bids.
 			if (allBids.size() == 5){
 				for (int i = 0; i < allBids.size(); i++){
+
+					// Deliver each MAIL that the host has collected to the enclave.
 					enclave.deliverMail(1, allBids.get(i));
 				}
-				byte[] toSend = requestToDeliver.get();
-				returnMap.put("bytes", Base64.getEncoder().encodeToString(toSend));
+
+				// The enclave will give us some mail to reply with via the callback we passed to the start() method.
+				byte[] reply = requestToDeliver.get();
 				enclave.close();
+
+				return reply;
 			}else{
-				returnMap.put("bytes", Base64.getEncoder().encodeToString(
-						("Number of bids left: " + (5 - numOfBids)).getBytes(StandardCharsets.UTF_8)));
+				// Return -1 to show that the auction is still running.
+				return ByteBuffer.allocate(4).putInt(-1).array();
 			}
-			return returnMap;
 	}
 }
