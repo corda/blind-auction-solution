@@ -20,106 +20,103 @@ import java.security.KeyPair;
 import java.util.*;
 
 public class Client {
+
     static HttpURLConnection getConn;
     static HttpURLConnection postConn;
+
     public static void main(String[] args) throws Exception {
 
         Random rand = new Random();
-        List<Integer> bids = new ArrayList<>();
+        int[] bids = new int[5];
         int sequenceNumber = 0;
+
+        //Send 5 bids with random numbers
         while(sequenceNumber < 5) {
             int currentBid = rand.nextInt(100);
-            bids.add(currentBid);
+            bids[sequenceNumber] = currentBid;
             System.out.println(
                     sendBid(currentBid,
                             "http://localhost:8080/sealed_bid_ra",
                             "http://localhost:8080/send_bid",
-                            "S:0CE5DB6D03AD076F59884B9E6A3A0690AF81B88775744BBFFE06B03C3A4A2C5F PROD:1 SEC:INSECURE",
+                            "S:4C8DA17C2264817E8380DB8CD7CA79145EED849BD33B442C88921418FBFB9B51 PROD:1 SEC:INSECURE",
                             "auction-1",
                             sequenceNumber++)
             );
         }
-        System.out.println("All the bids were: " + bids);
+
+        System.out.println("All the bids were: " + Arrays.toString(bids));
     }
 
+    /*
+    * A method used to POST raw encrypted bytes to an enclave.
+    *
+    * @PARAM bid - the undisclosed amount the user is willing to pay
+    * @PARAM raEndpoint - the path used to retrieve the remote attestation from the server
+    * @PARAM postEndpoint - the path used to send a bid to the server
+    * @PARAM attestationConstraint - constrain to a signing key along with the product ID
+    * @PARAM sequenceNumber - increment for each bid sent to the server
+    */
     public static String sendBid( int bid, String raEndpoint, String postEndpoint,  String attestationConstraint, String topic, int sequenceNumber) throws IOException {
         // Generate our own Curve25519 keypair so we can receive a response.
         KeyPair myKey = new Curve25519KeyPairGenerator().generateKeyPair();
+
+        // Send a GET request to retrieve the remote attestation
         EnclaveInstanceInfo receivedRA = getRa(raEndpoint, attestationConstraint);
+
+        // Create a mail object with the bid as a byte[]
         MutableMail mail = receivedRA.createMail(ByteBuffer.allocate(4).putInt(bid).array());
         mail.setSequenceNumber(sequenceNumber);
         mail.setPrivateKey(myKey.getPrivate());
         mail.setTopic(topic);
+
+        // Encrypt the mail
         byte[] encryptedMail = mail.encrypt();
 
         System.out.println("Sending the encrypted mail to the host.");
 
+        // Create a POST request to send the encrypted byte[] to Host server
         URL url = new URL(postEndpoint);
         postConn = (HttpURLConnection) url.openConnection();
         postConn.setRequestMethod("POST");
-        postConn.setRequestProperty("Content-Type", "application/json; utf-8");
-        postConn.setRequestProperty("Accept", "application/json");
+        postConn.setRequestProperty("Content-Type", "image/jpeg");
         postConn.setDoOutput(true);
 
-        HashMap<String, String> postMap = new HashMap<>();
-        postMap.put("mail", Base64.getEncoder().encodeToString(encryptedMail));
-        String jsonInputString = new Gson().toJson(postMap);
-        System.out.println(jsonInputString);
-
         try(OutputStream os = postConn.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
+            os.write(encryptedMail, 0, encryptedMail.length);
         }
 
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(postConn.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            System.out.println("RESPONSE: " + response);
-            HashMap<String, String> responseMap = parse(response.toString());
-            byte[] encryptedReply = Base64.getDecoder().decode(responseMap.get("bytes"));
-            String reply;
-            try{
-                EnclaveMail replyMail = receivedRA.decryptMail(encryptedReply, myKey.getPrivate());
-                reply = new String(replyMail.getBodyAsBytes());
-            }catch (Exception e) {
-                reply = new String(encryptedReply);
-            }finally {
-                postConn.disconnect();
-            }
-            return reply;
+        String response;
+        try {
+            // Read the enclave's response given by the server
+            byte[] encryptedReply = new byte[postConn.getInputStream().available()];
+            postConn.getInputStream().read(encryptedReply);
+
+            // Try to decrypt the response. If it is a proper MAIL object then it should work
+            // else, we simply let the client know in a catch block that their bid was received.
+            EnclaveMail replyMail = receivedRA.decryptMail(encryptedReply, myKey.getPrivate());
+            response = "Received the last bid. \nThe winning bid was: " + ByteBuffer.wrap(replyMail.getBodyAsBytes()).getInt();
+
+        }catch(Exception e){
+            response = "Bid " + (sequenceNumber + 1) + " was received.";
+        }finally {
+            postConn.disconnect();
         }
+
+        return response;
     }
 
 
-    public static EnclaveInstanceInfo getRa(String endpoint, String attestationConstraint){
+    public static EnclaveInstanceInfo getRa(String raEndpoint, String attestationConstraint){
         EnclaveInstanceInfo attestation = null;
         try{
-            BufferedReader reader;
-            String line;
-            StringBuffer responseContent = new StringBuffer();
-            URL url = new URL(endpoint);
+            URL url = new URL(raEndpoint);
             getConn = (HttpURLConnection) url.openConnection();
             getConn.setRequestMethod("GET");
 
-            int status = getConn.getResponseCode();
-            if(status > 299){
-                reader = new BufferedReader(new InputStreamReader(getConn.getErrorStream()));
-            }else{
-                reader = new BufferedReader(new InputStreamReader(getConn.getInputStream()));
-            }
-            while((line = reader.readLine()) != null){
-                responseContent.append(line);
-            }
-            reader.close();
-            HashMap<String, String> jsonMap = parse(responseContent.toString());
-            byte[] attestationBytes = Base64.getDecoder().decode(jsonMap.get("bytes"));
-
             //check attestation
-            attestation = EnclaveInstanceInfo.deserialize(attestationBytes);
+            byte[] buf = new byte[getConn.getInputStream().available()];
+            getConn.getInputStream().read(buf);
+            attestation = EnclaveInstanceInfo.deserialize(buf);
             EnclaveConstraint.parse(attestationConstraint).check(attestation);
 
         }catch(IOException | InvalidEnclaveException e){
@@ -128,10 +125,5 @@ public class Client {
             getConn.disconnect();
         }
         return attestation;
-    }
-
-    public static HashMap<String,String> parse(String responseBody){
-        HashMap<String,String> map = new Gson().fromJson(responseBody, new TypeToken<HashMap<String, String>>(){}.getType());
-        return map;
     }
 }
