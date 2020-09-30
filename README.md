@@ -3,7 +3,7 @@
 ## Sealed Bid Auction Conclave App
 The [sealed-bid-auction](https://github.com/JonathanScialpi/Sealed-Bid-Auction-CorDapp-Beta3/tree/master/sealed-bid-auction) is a Java application designed to demonstrate how to confidentially submit bids to an auction by leveraging [Conclave Beta 3](https://docs.conclave.net/#beta-3). 
 
-All bids are submitted are delievered as Conclave [Mail](https://docs.conclave.net/architecture.html#mail) via HTTP to the Spring Host which is running an [Enclave](https://docs.conclave.net/enclaves.html).
+All bids submitted are delievered as Conclave [Mail](https://docs.conclave.net/architecture.html#mail) via HTTP to the Spring Host which is running an [Enclave](https://docs.conclave.net/enclaves.html).
 
 Each of these bids are confidentially decrypted by the Enclave to not let the host or anyone else know of the value. Once The enclave has received all five bids, it calculates which of the five is the highest and sends the winning encrypted bid back to host.
 
