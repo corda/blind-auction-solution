@@ -22,4 +22,5 @@ This winning bid is saved in host memory so that it can be queired to reveal the
 
 ### Running the Application
 Run `Client.main()`
+
 (If you receive an `InvalidEnclaveException`, copy the key hash that is "acceptable" and overwrite the existing one on line 37 of Client.java)
