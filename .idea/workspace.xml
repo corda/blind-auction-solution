@@ -5,75 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18a131de-e30c-4000-9249-9715c3d5e571" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/classes/java/main/com/r3/conclave/sample/client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/distributions/client.tar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/distributions/client.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/libs/client.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/scripts/client" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/scripts/client.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/src/main/java/com/r3/conclave/sample/client/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/signing/external_signing_private.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/signing/external_signing_public.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/signing/sample_private_key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/enclave/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/enclave/src/main/java/com/r3/conclave/sample/enclave/SealedBidAuction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/enclave/src/test/java/com/r3/conclave/sample/enclave/ReverseEnclaveTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/host/bin/host" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/host/bin/host.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/host/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/host/src/main/java/com/r3/conclave/sample/host/Host.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/host/src/main/java/com/r3/conclave/sample/host/HostController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/host/src/test/java/com/r3/conclave/sample/host/HostTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/signing/external_signing_private.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/signing/external_signing_public.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/signing/sample_private_key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,8 +64,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1iEb03ch9yLAUwjTIZVUXL9XDGe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="RunManager" selected="Gradle.Webserver:host [assemble]">
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.r3.conclave.sample.client.Client" />
       <module name="Client.client.main" />
@@ -167,8 +108,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.Webserver:host [assemble]" />
       <item itemvalue="Application.Client" />
+      <item itemvalue="Gradle.Webserver:host [assemble]" />
     </list>
     <recent_temporary>
       <list>
@@ -177,25 +118,37 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18a131de-e30c-4000-9249-9715c3d5e571" name="Default Changelist" comment="" />
+      <created>1601475476681</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601475476681</updated>
+    </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="327" key="GridCell.Tab.0.bottom" timestamp="1601418949264">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601475558149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="327" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
-    <state width="1877" height="327" key="GridCell.Tab.0.center" timestamp="1601418949264">
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601475558149" />
+    <state width="1877" height="388" key="GridCell.Tab.0.bottom" timestamp="1601476198484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="327" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
-    <state width="1877" height="327" key="GridCell.Tab.0.left" timestamp="1601418949264">
+    <state width="1877" height="388" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601476198484" />
+    <state width="1877" height="388" key="GridCell.Tab.0.center" timestamp="1601476198484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="327" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
-    <state width="1877" height="327" key="GridCell.Tab.0.right" timestamp="1601418949264">
+    <state width="1877" height="388" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601476198484" />
+    <state width="1877" height="388" key="GridCell.Tab.0.left" timestamp="1601476198483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="327" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
+    <state width="1877" height="388" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601476198483" />
+    <state width="1877" height="388" key="GridCell.Tab.0.right" timestamp="1601476198484">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="388" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601476198484" />
   </component>
 </project>

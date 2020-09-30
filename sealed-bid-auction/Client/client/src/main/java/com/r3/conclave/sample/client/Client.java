@@ -34,7 +34,7 @@ public class Client {
         // Send a GET request to retrieve the remote attestation
         EnclaveInstanceInfo receivedRA = getRa(
                 "http://localhost:8080/sealed_bid_ra",
-                "S:80F5583339078DF2C5DA345785D9D50A4ED54F8859639D8D82F005E7F2BCE7BC PROD:1 SEC:INSECURE");
+                "S:A7747F67B824ADDCC9F3F85A66BE568D5124718F1013B4DFB9586C04DC6CA472 PROD:1 SEC:INSECURE");
 
         //Send 5 bids with random numbers
         while(sequenceNumber < 5) {
