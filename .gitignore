@@ -9,3 +9,4 @@ sealed-bid-auction/Client/.idea
 sealed-bid-auction/Client/.gradle
 sealed-bid-auction/Client/build
 sealed-bid-auction/Webserver/enclave/build/conclave/binutils
+.idea
