@@ -18,7 +18,7 @@ This winning bid is saved in host memory so that it can be queired to reveal the
 ### Starting the Spring Server
 1. Open the project in IntelliJ and run the Webserver->Host->Tasks->build->`assemble` configuration to create the Spring Server jar file.
 2. `docker exec -ti sba-conclave-beta3 cp /sdk/Webserver/host/build/libs/host.jar /tmp/`
-3. `docker exec -ti sba-conclave-beta3 java -jar /sdk/Webserver/host/build/libs/host.jar`
+3. `docker exec -ti sba-conclave-beta3 java -jar /tmp/host.jar`
 
 ### Running the Application
 Run `Client.main()`
