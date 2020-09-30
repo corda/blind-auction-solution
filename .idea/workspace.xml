@@ -1,21 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a03baa76-37b0-4e6f-86b5-f4c9a20ba455" name="Default Changelist" comment="">
+    <list default="true" id="18a131de-e30c-4000-9249-9715c3d5e571" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/classes/java/main/com/r3/conclave/sample/client/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client/build/classes/java/main/com/r3/conclave/sample/client/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/build/classes/java/main/com/r3/conclave/sample/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client/build/classes/java/main/com/r3/conclave/sample/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client/src/main/java/com/r3/conclave/sample/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client/src/main/java/com/r3/conclave/sample/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/enclave/src/main/java/com/r3/conclave/sample/enclave/SealedBidAuction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/enclave/src/main/java/com/r3/conclave/sample/enclave/SealedBidAuction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webserver/host/src/main/java/com/r3/conclave/sample/host/HostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Webserver/host/src/main/java/com/r3/conclave/sample/host/HostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/6.4.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build/classes/java/main/com/r3/conclave/sample/client/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build/distributions/client.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build/distributions/client.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build/libs/client.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build/scripts/client" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build/scripts/client.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client/src/main/java/com/r3/conclave/sample/client/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/signing/external_signing_private.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/signing/external_signing_public.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/signing/sample_private_key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/enclave/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/enclave/src/main/java/com/r3/conclave/sample/enclave/SealedBidAuction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/enclave/src/test/java/com/r3/conclave/sample/enclave/ReverseEnclaveTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/host/bin/host" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/host/bin/host.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/host/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/host/src/main/java/com/r3/conclave/sample/host/Host.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/host/src/main/java/com/r3/conclave/sample/host/HostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/host/src/test/java/com/r3/conclave/sample/host/HostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/signing/external_signing_private.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/signing/external_signing_public.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webserver/signing/sample_private_key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +81,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
+    <projectState path="$PROJECT_DIR$/sealed-bid-auction/Client">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/sealed-bid-auction/Webserver">
       <ProjectState />
     </projectState>
   </component>
@@ -33,10 +94,7 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <task path="$PROJECT_DIR$/enclave">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$/host">
+        <task path="$PROJECT_DIR$/sealed-bid-auction/Webserver/host">
           <activation />
         </task>
         <projects_view>
@@ -44,7 +102,25 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="sealed-bid-auction" type="f1a62948:ProjectNode" />
+                <item name="Webserver" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Webserver" type="f1a62948:ProjectNode" />
+                <item name="host" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Webserver" type="f1a62948:ProjectNode" />
+                <item name="host" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Webserver" type="f1a62948:ProjectNode" />
+                <item name="host" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -53,50 +129,17 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1f6BLOGvz5B9IxACbWUTdcqCxpK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.62643677" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="show.unlinked.gradle.project.popup" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\ws\sealed-bid-auction\src\main\java" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ws\sealed-bid-auction\host\src\main\java\com\r3\conclave\sample\host" />
-      <recent name="C:\ws\sealed-bid-auction\spring\src\main\java" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Gradle.sealed-bid-auction:host [bootJar]">
-    <configuration name="RestServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.r3.conclave.sample.host.RestServiceApplication" />
-      <module name="sealed-bid-auction.host.main" />
+  <component name="RunManager" selected="Gradle.Webserver:host [assemble]">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.r3.conclave.sample.client.Client" />
+      <module name="Client.client.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.r3.conclave.sample.host.*" />
+          <option name="PATTERN" value="com.r3.conclave.sample.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,10 +147,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sealed-bid-auction [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Webserver:host [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sealed-bid-auction/Webserver/host" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -122,198 +165,37 @@
       </ExternalSystemSettings>
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
-    </configuration>
-    <configuration name="sealed-bid-auction:enclave [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/enclave" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="sealed-bid-auction:host [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/host" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="assemble" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="sealed-bid-auction:host [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/host" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootJar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BuildNewContainer" type="ShConfigurationType">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/buildscripts/my-enclave-dok.cmd" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <method v="2">
-        <option name="Gradle.BeforeRunTask" enabled="true" tasks="assemble" externalProjectPath="$PROJECT_DIR$/host" vmOptions="" scriptParameters="" />
-      </method>
-    </configuration>
-    <configuration name="DeployTar" type="ShConfigurationType">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/buildscripts/deploy-tar-and-run.cmd" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <method v="2">
-        <option name="Gradle.BeforeRunTask" enabled="true" tasks="assemble" externalProjectPath="$PROJECT_DIR$/enclave" vmOptions="" scriptParameters="" />
-        <option name="Gradle.BeforeRunTask" enabled="true" tasks="assemble" externalProjectPath="$PROJECT_DIR$/host" vmOptions="" scriptParameters="" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ShConfigurationType">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/build scripts/my-enclave-dok.cmd" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <method v="2">
-        <option name="Gradle.BeforeRunTask" enabled="true" tasks="assemble" externalProjectPath="$PROJECT_DIR$/enclave" vmOptions="" scriptParameters="" />
-        <option name="Gradle.BeforeRunTask" enabled="true" tasks="assemble" externalProjectPath="$PROJECT_DIR$/host" vmOptions="" scriptParameters="" />
-      </method>
     </configuration>
     <list>
-      <item itemvalue="Application.RestServiceApplication" />
-      <item itemvalue="Gradle.sealed-bid-auction:host [assemble]" />
-      <item itemvalue="Gradle.sealed-bid-auction [assemble]" />
-      <item itemvalue="Gradle.sealed-bid-auction:host [bootJar]" />
-      <item itemvalue="Gradle.sealed-bid-auction:enclave [build]" />
-      <item itemvalue="Shell Script.BuildNewContainer" />
-      <item itemvalue="Shell Script.DeployTar" />
+      <item itemvalue="Gradle.Webserver:host [assemble]" />
+      <item itemvalue="Application.Client" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.sealed-bid-auction:enclave [build]" />
-        <item itemvalue="Gradle.sealed-bid-auction:host [bootJar]" />
-        <item itemvalue="Application.RestServiceApplication" />
-        <item itemvalue="Gradle.sealed-bid-auction [assemble]" />
-        <item itemvalue="Gradle.sealed-bid-auction:host [assemble]" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Gradle.Webserver:host [assemble]" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a03baa76-37b0-4e6f-86b5-f4c9a20ba455" name="Default Changelist" comment="" />
-      <created>1595528604474</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1595528604474</updated>
-    </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="94" key="#Project_Structure" timestamp="1595540120404">
+    <state width="1877" height="327" key="GridCell.Tab.0.bottom" timestamp="1601418949264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="#Project_Structure/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1595540120404" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595536131773">
+    <state width="1877" height="327" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
+    <state width="1877" height="327" key="GridCell.Tab.0.center" timestamp="1601418949264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1595536131773" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595991836037">
+    <state width="1877" height="327" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
+    <state width="1877" height="327" key="GridCell.Tab.0.left" timestamp="1601418949264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1595991836037" />
-    <state x="-810" y="687" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1595969473211">
-      <screen x="-1080" y="0" width="1080" height="1880" />
-    </state>
-    <state x="-810" y="687" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@-1080.0.1080.1880" timestamp="1595969473211" />
-    <state x="740" y="275" width="655" height="598" key="FileChooserDialogImpl" timestamp="1596214130144">
+    <state width="1877" height="327" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
+    <state width="1877" height="327" key="GridCell.Tab.0.right" timestamp="1601418949264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" width="655" height="598" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596214130144" />
-    <state width="1877" height="160" key="GridCell.Tab.0.bottom" timestamp="1596210128518">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1037" height="168" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@-1080.0.1080.1880" timestamp="1595970156958" />
-    <state width="1877" height="160" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596210128518" />
-    <state width="1877" height="160" key="GridCell.Tab.0.center" timestamp="1596210128517">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1037" height="168" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@-1080.0.1080.1880" timestamp="1595970156958" />
-    <state width="1877" height="160" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596210128517" />
-    <state width="1877" height="160" key="GridCell.Tab.0.left" timestamp="1596210128517">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1037" height="168" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@-1080.0.1080.1880" timestamp="1595970156958" />
-    <state width="1877" height="160" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596210128517" />
-    <state width="1877" height="160" key="GridCell.Tab.0.right" timestamp="1596210128517">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1037" height="168" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@-1080.0.1080.1880" timestamp="1595970156958" />
-    <state width="1877" height="160" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596210128517" />
-    <state x="526" y="156" key="SettingsEditor" timestamp="1595567761023">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="526" y="156" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1595567761023" />
-    <state x="360" y="290" width="951" height="534" key="find.popup" timestamp="1596133724836">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="360" y="290" width="951" height="534" key="find.popup/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596133724836" />
-    <state x="342" y="130" key="new project wizard" timestamp="1595960500462">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="342" y="130" key="new project wizard/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1595960500462" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1596135888947">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596135888947" />
-    <state x="361" y="241" width="1195" height="376" key="search.everywhere.popup" timestamp="1596131760429">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-877" y="435" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@-1080.0.1080.1880" timestamp="1595969458477" />
-    <state x="361" y="241" width="1195" height="376" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1596131760429" />
+    <state width="1877" height="327" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1601418949264" />
   </component>
 </project>
