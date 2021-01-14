@@ -10,7 +10,6 @@ import com.r3.conclave.mail.MutableMail;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.security.KeyPair;
@@ -34,7 +33,7 @@ public class Client {
         // Send a GET request to retrieve the remote attestation
         EnclaveInstanceInfo receivedRA = getRa(
                 "http://localhost:8080/sealed_bid_ra",
-                "S:A7747F67B824ADDCC9F3F85A66BE568D5124718F1013B4DFB9586C04DC6CA472 PROD:1 SEC:INSECURE");
+                "S:1AFE60D9DFDD2BFDDDEFD59B55ED08AE417C2780A0802CD806B11283C337A385 PROD:1 SEC:INSECURE");
 
         //Send 5 bids with random numbers
         while(sequenceNumber < 5) {

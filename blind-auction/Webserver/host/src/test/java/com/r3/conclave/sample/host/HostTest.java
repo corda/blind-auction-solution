@@ -12,23 +12,23 @@ import org.junit.jupiter.api.BeforeAll;
  */
 public class HostTest {
     // We start by loading the enclave using EnclaveHost, and passing the class name of the Enclave subclass
-    // that we defined in our enclave module.
-    private static EnclaveHost enclave;
-
-    @BeforeAll
-    static void startup() throws EnclaveLoadException {
-        enclave = EnclaveHost.load("com.r3.conclave.sample.enclave.ReverseEnclave");
-        // Optionally pass in the SPID and attestation key which are required for remote attestation. These can be null
-        // if running in simulation mode, but are required in debug/release mode.
-        String spid = System.getProperty("spid");
-        String attestionKey = System.getProperty("attestation-key");
-        enclave.start(spid != null ? OpaqueBytes.parse(spid) : null, attestionKey, null);
-    }
-
-    @AfterAll
-    static void shutdown() {
-        enclave.close();
-    }
+//    // that we defined in our enclave module.
+//    private static EnclaveHost enclave;
+//
+//    @BeforeAll
+//    static void startup() throws EnclaveLoadException {
+//        enclave = EnclaveHost.load("com.r3.conclave.sample.enclave.ReverseEnclave");
+//        // Optionally pass in the SPID and attestation key which are required for remote attestation. These can be null
+//        // if running in simulation mode, but are required in debug/release mode.
+//        String spid = System.getProperty("spid");
+//        String attestionKey = System.getProperty("attestation-key");
+//        enclave.start(spid != null ? OpaqueBytes.parse(spid) : null, attestionKey, null);
+//    }
+//
+//    @AfterAll
+//    static void shutdown() {
+//        enclave.close();
+//    }
 
 //    @Test
 //    void reverseNumber() {

@@ -1,6 +1,7 @@
 package com.r3.conclave.sample.host;
 
 import com.r3.conclave.common.OpaqueBytes;
+import com.r3.conclave.host.AttestationParameters;
 import com.r3.conclave.host.EnclaveHost;
 import com.r3.conclave.host.EnclaveLoadException;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,18 +15,15 @@ import java.util.concurrent.atomic.AtomicReference;
 public class HostController {
 	EnclaveHost enclave;
 	AtomicReference<byte[]> requestToDeliver = new AtomicReference<>();
-	int mailID = 0;
+	long mailID = 0;
 	byte[] winner;
 
 	public HostController() throws EnclaveLoadException {
 		System.out.println("Starting Enclave");
 		enclave = EnclaveHost.load("com.r3.conclave.sample.enclave.SealedBidAuction");
 
-		OpaqueBytes spid = new OpaqueBytes(new byte[16]);
-		String attestationKey = "mock-key";
-
 		// Start the Enclave.
-		enclave.start(spid, attestationKey, new EnclaveHost.MailCallbacks() {
+		enclave.start(new AttestationParameters.DCAP(), new EnclaveHost.MailCallbacks() {
 			@Override
 			public void postMail(byte[] encryptedBytes, String routingHint) {
 				requestToDeliver.set(encryptedBytes);
@@ -48,7 +46,7 @@ public class HostController {
 	// A POST endpoint which accepts raw encrypted bytes sent by a client to deliver to an enclave.
 	@PostMapping(path = "/send_bid")
 	public void sendBid(@RequestBody byte[] bid){
-		enclave.deliverMail(mailID++, bid);
+		enclave.deliverMail(mailID++, bid, "routingHint");
 
 		// The enclave will give us some mail to reply with via the callback we passed to the start() method.
 		byte[] reply = requestToDeliver.get();

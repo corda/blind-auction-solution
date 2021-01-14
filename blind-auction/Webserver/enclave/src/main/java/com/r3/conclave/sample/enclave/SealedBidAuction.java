@@ -1,6 +1,5 @@
 package com.r3.conclave.sample.enclave;
 
-import com.r3.conclave.common.enclave.EnclaveCall;
 import com.r3.conclave.enclave.Enclave;
 import com.r3.conclave.mail.EnclaveMail;
 import com.r3.conclave.mail.MutableMail;
@@ -12,10 +11,9 @@ import java.util.List;
  * Find the highest bid in a set of 5.
  */
 
-public class SealedBidAuction extends Enclave implements EnclaveCall {
+public class SealedBidAuction extends Enclave {
     List<byte[]> allBids = new ArrayList<>();
 
-    @Override
     public byte[] invoke(byte[] bid) {
         allBids.add(bid);
         int highestBid = 0;
@@ -33,7 +31,7 @@ public class SealedBidAuction extends Enclave implements EnclaveCall {
     }
 
     @Override
-    protected void receiveMail(long id, EnclaveMail mail) {
+    protected void receiveMail(long id, String routingHint, EnclaveMail mail) {
         byte[] submitBid = invoke(mail.getBodyAsBytes());
         if(allBids.size() == 5){
             MutableMail reply = createMail(mail.getAuthenticatedSender(), submitBid);

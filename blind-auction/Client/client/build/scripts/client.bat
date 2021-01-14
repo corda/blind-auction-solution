@@ -82,7 +82,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\client.jar;%APP_HOME%\lib\json-20171018.jar;%APP_HOME%\lib\conclave-client-a271a3f1f8e8ef6a99b590b3a5f0a17bd12800b4-SNAPSHOT.jar;%APP_HOME%\lib\gson-2.8.6.jar;%APP_HOME%\lib\conclave-common-a271a3f1f8e8ef6a99b590b3a5f0a17bd12800b4-SNAPSHOT.jar;%APP_HOME%\lib\conclave-mail-a271a3f1f8e8ef6a99b590b3a5f0a17bd12800b4-SNAPSHOT.jar;%APP_HOME%\lib\kotlin-stdlib-jdk8-1.3.61.jar;%APP_HOME%\lib\kotlin-stdlib-jdk7-1.3.61.jar;%APP_HOME%\lib\jackson-module-kotlin-2.10.2.jar;%APP_HOME%\lib\kotlin-reflect-1.3.61.jar;%APP_HOME%\lib\kotlin-stdlib-1.3.61.jar;%APP_HOME%\lib\jackson-datatype-jsr310-2.10.2.jar;%APP_HOME%\lib\eddsa-0.3.0.jar;%APP_HOME%\lib\kotlin-stdlib-common-1.3.61.jar;%APP_HOME%\lib\annotations-13.0.jar;%APP_HOME%\lib\jackson-databind-2.10.2.jar;%APP_HOME%\lib\jackson-annotations-2.10.2.jar;%APP_HOME%\lib\jackson-core-2.10.2.jar
+set CLASSPATH=%APP_HOME%\lib\client.jar;%APP_HOME%\lib\json-20171018.jar;%APP_HOME%\lib\conclave-client-0.4-SNAPSHOT.jar;%APP_HOME%\lib\gson-2.8.6.jar;%APP_HOME%\lib\conclave-common-0.4-SNAPSHOT.jar;%APP_HOME%\lib\eddsa-0.3.0.jar;%APP_HOME%\lib\conclave-mail-0.4-SNAPSHOT.jar
 
 
 @rem Execute client
