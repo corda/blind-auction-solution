@@ -1,5 +1,7 @@
 package com.r3.conclave.sample.host;
 
+
+
 import com.r3.conclave.common.OpaqueBytes;
 import com.r3.conclave.host.AttestationParameters;
 import com.r3.conclave.host.EnclaveHost;
@@ -59,7 +61,7 @@ public class HostController {
 		}
 	}
 
-	// A GET endpoint used to retrieve the remote attestation.
+	// A GET endpoint used to reveal the winner of the auction
 	@GetMapping(path="/reveal_winner")
 	public byte[] get_winner() {
 		return winner;

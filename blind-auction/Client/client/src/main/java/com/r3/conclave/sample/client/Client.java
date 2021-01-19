@@ -13,7 +13,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.security.KeyPair;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Client {
@@ -25,10 +27,7 @@ public class Client {
 
         Random rand = new Random();
         int[] bids = new int[5];
-        int sequenceNumber = 0;
-
-        // Generate our own Curve25519 keypair so we can receive a response.
-        KeyPair myKey = new Curve25519KeyPairGenerator().generateKeyPair();
+        List<KeyPair> clientKeyPairs = new ArrayList<>();
 
         // Send a GET request to retrieve the remote attestation
         EnclaveInstanceInfo receivedRA = getRa(
@@ -36,24 +35,28 @@ public class Client {
                 "S:1AFE60D9DFDD2BFDDDEFD59B55ED08AE417C2780A0802CD806B11283C337A385 PROD:1 SEC:INSECURE");
 
         //Send 5 bids with random numbers
-        while(sequenceNumber < 5) {
+        int counter = 0;
+        while(counter < 5) {
+            clientKeyPairs.add(new Curve25519KeyPairGenerator().generateKeyPair());
             int currentBid = rand.nextInt(100);
-            bids[sequenceNumber] = currentBid;
+            bids[counter] = currentBid;
             sendBid(currentBid,
                     receivedRA,
                     "http://localhost:8080/send_bid",
-                    myKey,
+                    clientKeyPairs.get(counter),
                     "auction-1",
-                    sequenceNumber++);
+                    counter++);
+            System.out.println("Client #" + (counter) + " sending encrypted bid: " + currentBid);
         }
 
-
-        System.out.println("All the bids were: " + Arrays.toString(bids));
-        System.out.println(getWinner(
-                "http://localhost:8080/reveal_winner",
-                receivedRA,
-                myKey
-        ));
+        System.out.println("\n!!!!!!!!!!~REVEALING THE WINNER~!!!!!!!!!!\n");
+        for(int i = 0; i < clientKeyPairs.size(); i++){
+            System.out.println("Client #" + (i+1) + " ... " + getWinner(
+                    "http://localhost:8080/reveal_winner",
+                    receivedRA,
+                    clientKeyPairs.get(i)
+            ));
+        }
     }
 
     /**
@@ -75,8 +78,6 @@ public class Client {
 
         // Encrypt the mail
         byte[] encryptedMail = mail.encrypt();
-
-        System.out.println("Sending the encrypted mail to the host.");
 
         // Create a POST request to send the encrypted byte[] to Host server
         URL url = new URL(postEndpoint);
@@ -120,7 +121,7 @@ public class Client {
 
     //Retrieve the winning bid
     public static String getWinner(String winnerEndpoint, EnclaveInstanceInfo receivedRA, KeyPair myKey){
-        String response = "The winning bid was: ";
+        String response = "Congratulations! You won the auction with a bid of $";
         try{
             URL url = new URL(winnerEndpoint);
             getConn = (HttpURLConnection) url.openConnection();
@@ -134,7 +135,7 @@ public class Client {
             response += ByteBuffer.wrap(replyMail.getBodyAsBytes()).getInt();
 
         }catch(IOException e){
-            e.printStackTrace();
+           response = "Sorry but you are not the winner :(";
         }finally {
             getConn.disconnect();
         }
