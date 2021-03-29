@@ -11,14 +11,15 @@ This winning bid is saved in host memory so that it can be queired to reveal the
 
 ### Creating the Docker Image
 1. Install Docker
-2. `docker run --name sba-conclave-beta3 -p 8080:8080 -it -d -v {your project path}/sba-conclave-beta3/sealed-bid-auction:/sdk -w /sdk ubuntu bash`
-3. `docker exec -ti sba-conclave-beta3 apt update`
-4. `docker exec -ti sba-conclave-beta3 apt install -y openjdk-8-jdk`
+2. `docker run --name blind-auction -p 8080:8080 -it -d -v C:\ws\blind-auction\:/sdk -w /sdk ubuntu bash`
+3. `docker exec -ti blind-auction apt update`
+4. `docker exec -ti blind-auction apt install -y openjdk-8-jdk`
 
 ### Starting the Spring Server
-1. Open the project in IntelliJ and run the Webserver->Host->Tasks->build->`assemble` configuration to create the Spring Server jar file.
-2. `docker exec -ti sba-conclave-beta3 cp /sdk/Webserver/host/build/libs/host.jar /tmp/`
-3. `docker exec -ti sba-conclave-beta3 java -jar /tmp/host.jar`
+1. Clone this project to your local machine.
+2. Open the project in IntelliJ and run the Webserver->Host->Tasks->build->assemble configuration to create the Spring Server jar file.
+3. `docker exec -ti blind-auction cp /sdk/Webserver/host/build/libs/host.jar /tmp/`
+4. `docker exec -ti blind-auction java -jar /tmp/host.jar`
 
 ### Running the Application
 Run `Client.main()`
